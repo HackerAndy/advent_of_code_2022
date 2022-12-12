@@ -89,16 +89,16 @@ def part2():
                 continue
                 # print("Boundry", "Row", row_num, "Col", col_num)
             else:
-                print("processing:", "row:", row_num, "col:", col_num)
+                # print("processing:", "row:", row_num, "col:", col_num)
 
                 view_from_left = viewing_distance(reverse_row[max_columns - col_num + 1:], tree_height)
-                print("Score (from left)", view_from_left)
+                # print("Score (from left)", view_from_left)
                 view_from_top = viewing_distance(reverse_column[max_rows - row_num + 1:], tree_height)
-                print("Score (from top)", view_from_top)
+                # print("Score (from top)", view_from_top)
                 view_from_right = viewing_distance(row[col_num + 1:], tree_height)
-                print("Score (from right)", view_from_right)
+                # print("Score (from right)", view_from_right)
                 view_from_bottom = viewing_distance(column[row_num + 1:], tree_height)
-                print("Score (from bottom)", view_from_bottom)
+                # print("Score (from bottom)", view_from_bottom)
             
             scenic_score = view_from_left * view_from_top * view_from_right * view_from_bottom
         
@@ -112,8 +112,8 @@ data_file = open(data_file_name, 'r')
 data_array = numpy.genfromtxt(data_file, delimiter=1, dtype="int")
 
 
-# visable_trees = part1()
-# print("How many visable trees", visable_trees)
+visable_trees = part1()
+print("How many visable trees", visable_trees)
 
 max_score = part2()
 print("Max viewing score", max_score)
